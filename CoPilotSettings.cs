@@ -154,6 +154,7 @@ namespace CoPilot
         #region BloodRage
 
         public ToggleNode bloodRageEnabled = new ToggleNode(false);
+        public ToggleNode bloodRageReqFullHealth = new ToggleNode(false);
         public RangeNode<int> bloodRageRange = new RangeNode<int>(300, 800, 3000);
         public RangeNode<int> bloodRageMinAny = new RangeNode<int>(1, 0, 50);
         public RangeNode<int> bloodRageMinRare = new RangeNode<int>(0, 0, 50);

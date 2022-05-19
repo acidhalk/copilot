@@ -338,6 +338,9 @@ namespace CoPilot
                         ImGuiExtension.IntSlider("min Enemy Rare", CoPilot.instance.Settings.bloodRageMinRare);
                     CoPilot.instance.Settings.bloodRageMinUnique.Value = ImGuiExtension.IntSlider("min Enemy Unique",
                         CoPilot.instance.Settings.bloodRageMinUnique);
+                    CoPilot.instance.Settings.bloodRageReqFullHealth.Value = ImGuiExtension.Checkbox(
+                        "Only use on full health",
+                        CoPilot.instance.Settings.bloodRageReqFullHealth.Value);
                 }
             }
             catch (Exception e)
