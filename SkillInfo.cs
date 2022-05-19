@@ -58,6 +58,7 @@ namespace CoPilot
         internal static Skill sweep = new Skill();
         internal static Skill witherStep = new Skill();
         internal static Skill frenzy = new Skill();
+        internal static Skill focus = new Skill();
 
         internal static void ResetSkills()
         {
@@ -102,6 +103,7 @@ namespace CoPilot
             sweep = new Skill();
             witherStep = new Skill();
             frenzy = new Skill();
+            focus = new Skill();
         }
 
         public static void GetDeltaTime()
@@ -296,6 +298,10 @@ namespace CoPilot
                     case "corrosive_shroud":
                         plagueBearer.Id = skill.Id;
                         plagueBearer.BuffName = "corrosive_shroud";
+                        break;
+                    case "focus":
+                        focus.Id = skill.Id;
+                        focus.BuffName = "focus";
                         break;
                 }
             }

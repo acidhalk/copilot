@@ -596,6 +596,33 @@ namespace CoPilot
 
                     #endregion
 
+                    #region Focus
+
+                    if (Settings.FocusEnabled)
+                        try
+                        {
+                            if (skill.Id == SkillInfo.focus.Id)
+                            {
+                                if (!buffs.Exists(b => b.Name == SkillInfo.focus.BuffName)
+                                 && SkillInfo.ManageCooldown(SkillInfo.focus, skill)
+                                 && MonsterCheck(
+                                        Settings.FocusRange,
+                                        Settings.FocusMinAny,
+                                        Settings.FocusMinRare,
+                                        Settings.FocusMinUnique))
+                                {
+                                    Keyboard.KeyPress(GetSkillInputKey(skill.SkillSlotIndex));
+                                    SkillInfo.focus.Cooldown = Settings.FocusCooldown;
+                                }
+                            }
+                        }
+                        catch (Exception e)
+                        {
+                            LogError(e.ToString());
+                        }
+
+                    #endregion
+
                     #region Auto Summon
 
                     if (Settings.autoSummonEnabled)

@@ -155,10 +155,21 @@ namespace CoPilot
 
         public ToggleNode bloodRageEnabled = new ToggleNode(false);
         public ToggleNode bloodRageReqFullHealth = new ToggleNode(false);
-        public RangeNode<int> bloodRageRange = new RangeNode<int>(300, 800, 3000);
+        public RangeNode<int> bloodRageRange = new RangeNode<int>(800, 300, 3000);
         public RangeNode<int> bloodRageMinAny = new RangeNode<int>(1, 0, 50);
         public RangeNode<int> bloodRageMinRare = new RangeNode<int>(0, 0, 50);
         public RangeNode<int> bloodRageMinUnique = new RangeNode<int>(0, 0, 50);
+
+        #endregion
+
+        #region Focus
+
+        public ToggleNode FocusEnabled = new ToggleNode(false);
+        public RangeNode<int> FocusCooldown = new RangeNode<int>(8000, 100, 12000);
+        public RangeNode<int> FocusRange = new RangeNode<int>(800, 300, 3000);
+        public RangeNode<int> FocusMinAny = new RangeNode<int>(1, 0, 50);
+        public RangeNode<int> FocusMinRare = new RangeNode<int>(0, 0, 50);
+        public RangeNode<int> FocusMinUnique = new RangeNode<int>(0, 0, 50);
 
         #endregion
 

@@ -348,7 +348,6 @@ namespace CoPilot
                 CoPilot.instance.LogError(e.ToString());
             }
 
-
             try
             {
                 ImGui.PushStyleColor(ImGuiCol.Header, CoPilot.instance.Settings.delveFlareEnabled ? green : red);
@@ -851,6 +850,30 @@ namespace CoPilot
                     CoPilot.instance.Settings.plagueBearer.Value = ImGuiExtension.Checkbox("Enabled", CoPilot.instance.Settings.plagueBearer.Value);
                     CoPilot.instance.Settings.plagueBearerRange.Value = ImGuiExtension.IntSlider("Enemy Range", CoPilot.instance.Settings.plagueBearerRange);
                     CoPilot.instance.Settings.plagueBearerMinEnemys.Value = ImGuiExtension.IntSlider("Min Enemy Any", CoPilot.instance.Settings.plagueBearerMinEnemys);
+                }
+            }
+            catch (Exception e)
+            {
+                CoPilot.instance.LogError(e.ToString());
+            }
+
+            try
+            {
+                // Focus
+                ImGui.PushStyleColor(ImGuiCol.Header, CoPilot.instance.Settings.FocusEnabled ? green : red);
+                ImGui.PushID(27);
+                if (ImGui.TreeNodeEx("Focus", collapsingHeaderFlags))
+                {
+                    CoPilot.instance.Settings.FocusEnabled.Value =
+                        ImGuiExtension.Checkbox("Enabled", CoPilot.instance.Settings.FocusEnabled.Value);
+                    CoPilot.instance.Settings.FocusRange.Value =
+                        ImGuiExtension.IntSlider("Range", CoPilot.instance.Settings.FocusRange);
+                    CoPilot.instance.Settings.FocusMinAny.Value =
+                        ImGuiExtension.IntSlider("min Enemy Any", CoPilot.instance.Settings.FocusMinAny);
+                    CoPilot.instance.Settings.FocusMinRare.Value =
+                        ImGuiExtension.IntSlider("min Enemy Rare", CoPilot.instance.Settings.FocusMinRare);
+                    CoPilot.instance.Settings.FocusMinUnique.Value = ImGuiExtension.IntSlider("min Enemy Unique", CoPilot.instance.Settings.FocusMinUnique);
+                    CoPilot.instance.Settings.FocusCooldown.Value = ImGuiExtension.IntSlider("cooldown in milliseconds", CoPilot.instance.Settings.FocusCooldown);
                 }
             }
             catch (Exception e)
