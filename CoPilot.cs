@@ -257,7 +257,7 @@ namespace CoPilot
             var coroutine = new Coroutine(WaitForSkillsAfterAreaChange(), this);
             Core.ParallelRunner.Run(coroutine);
             
-            autoPilot.AreaChange();
+            //autoPilot.AreaChange();
         }
         
         public override void DrawSettings()
