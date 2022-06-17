@@ -59,6 +59,7 @@ namespace CoPilot
         internal static Skill witherStep = new Skill();
         internal static Skill frenzy = new Skill();
         internal static Skill focus = new Skill();
+	internal static Skill smite = new Skill();
 
         internal static void ResetSkills()
         {
@@ -104,6 +105,7 @@ namespace CoPilot
             witherStep = new Skill();
             frenzy = new Skill();
             focus = new Skill();
+	    smite= new Skill();
         }
 
         public static void GetDeltaTime()
@@ -303,7 +305,10 @@ namespace CoPilot
                         focus.Id = skill.Id;
                         focus.BuffName = "focus";
                         break;
-                }
+                    case smite
+                        smite = skill.Id;
+                        smite.BuffName = "smite";
+                        break;                }
             }
         }
     }
